@@ -1,5 +1,7 @@
 # Faker::Russian
 
+[![Code Climate](https://codeclimate.com/github/asiniy/faker-russian.png)](https://codeclimate.com/github/asiniy/faker-russian)
+
 TODO: Write a gem description
 
 ## Installation
