@@ -1,5 +1,6 @@
 # Faker::Russian
 
+[![Gem Version](https://badge.fury.io/rb/faker-russian.svg)](http://badge.fury.io/rb/faker-russian)
 [![Code Climate](https://codeclimate.com/github/asiniy/faker-russian.png)](https://codeclimate.com/github/asiniy/faker-russian)
 
 TODO: Write a gem description
