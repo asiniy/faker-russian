@@ -2,9 +2,14 @@ module Faker
   module Russian
     module Inn
       def inn(options = {})
-        region_number = find_region_number(options[:region_number])
-        kind = find_kind(options[:kind])
-        sequence_digits = find_sequence_digits(kind, options[:sequence_number])
+        if (options.keys - [:sequence_number, :region_number, :kind]).any?
+          raise 'wrong options. just :kind, :region_number ot :sequence_number'
+        end
+
+        sequence = find_sequence(options[:sequence_number])
+        region_number = find_region_number(options[:region_number], sequence)
+        kind = find_kind(options[:kind], sequence)
+        sequence_digits = find_digits(kind, sequence)
 
         inn_without_check_digit = region_number + sequence_digits
         inn_without_check_digit + check_digit(inn_without_check_digit)
@@ -12,29 +17,32 @@ module Faker
 
     private
 
-      def find_region_number(number = nil)
+      def find_sequence(number)
+        sequence = number || Random.rand(1_000_000_000)
+        Random.new(sequence)
+      end
+
+      def find_region_number(number = nil, sequence)
+        region_numbers = Faker::Russian::SharedConstants::REGION_NUMBERS
+
         if number.present?
-          raise('there is no region with that number!') unless Faker::Russian::SharedConstants::REGION_NUMBERS.include?(number.to_s)
+          raise('there is no region with that number!') unless region_numbers.include?(number.to_s)
           number.to_s
         else
-          Faker::Russian::SharedConstants::REGION_NUMBERS.sample
+          region_numbers[sequence.rand(region_numbers.size)]
         end
       end
 
-      def find_kind(kind)
+      def find_kind(kind, sequence)
         case kind
-        when :individual then :individual
-        when :legal then :legal
-        when nil then [:individual, :legal].sample
+        when :individual, :legal then kind
+        when nil then [:individual, :legal][sequence.rand(2)]
         else raise 'there is no any kind other than :individual or :legal'
         end
       end
 
-      def find_sequence_digits(kind, sequence_number)
-        sequence = sequence_number || Random.rand(1_000_000_000)
-        seed = Random.new(sequence)
-
-        (kind == :legal) ? seed.rand(1_000_000..9_999_999).to_s : seed.rand(10_000_000..99_999_999).to_s
+      def find_digits(kind, sequence)
+        (kind == :legal) ? sequence.rand(1_000_000..9_999_999).to_s : sequence.rand(10_000_000..99_999_999).to_s
       end
 
       def check_digit(digits)
