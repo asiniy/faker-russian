@@ -17,6 +17,8 @@ Generation of specific russian values
 * (TODO) [SNILS](http://ru.wikipedia.org/wiki/Страховой_номер_индивидуального_лицевого_счёта) (Faker::Russian.snils)
 * (TODO) [Passport value](http://ru.wikipedia.org/wiki/Паспорт_гражданина_Российской_Федерации) (Faker::Russian.passport)
 
+You can use [gem 'validates_russian'](https://github.com/asiniy/validates_russian) for validates generated values
+
 ## Installation
 
 Add to Gemfile
