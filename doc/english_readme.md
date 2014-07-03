@@ -9,7 +9,7 @@ Generation of specific russian values
 
 * [INN](http://ru.wikipedia.org/wiki/Идентификационный_номер_налогоплательщика) (Faker::Russian.inn) Russian analogue of VAT identification number
 * (TODO) [OKPO](http://ru.wikipedia.org/wiki/Общероссийский_классификатор_предприятий_и_организаций) (Faker::Russian.okpo) Legal code
-* (TODO) [KPP](http://ru.wikipedia.org/wiki/Код_причины_постановки_на_учёт) (Faker::Russian.kpp) Code of reason for registration
+* [KPP](http://ru.wikipedia.org/wiki/Код_причины_постановки_на_учёт) (Faker::Russian.kpp) Code of reason for registration
 * (TODO) [OGRN](http://ru.wikipedia.org/wiki/Основной_государственный_регистрационный_номер) (Faker::Russian.ogrn) Main state registration number
 * (TODO) [Correspondent Account Value] (http://ru.wikipedia.org/wiki/Корреспондентский_счёт) (Faker::Russian.ks)
 * (TODO) [Bank account value] (http://ru.wikipedia.org/wiki/Расчётный_счёт) (Faker::Russian.rs)
@@ -46,6 +46,27 @@ Also you can use sequences
 ``` ruby
   Faker::Russian.inn(sequence_number: 1) # => '0956860593'
   Faker::Russian.inn(sequence_number: 1) # => '0956860593'
+```
+
+### KPP
+
+Generate KPP with random region_number
+
+``` ruby
+  Faker::Russian.kpp # => '525601001'
+```
+
+You can choose region
+
+``` ruby
+  Faker::Russian.kpp(region_number: 78) # => '784101001'
+```
+
+Also, you can use pseudo random sequence numbers (not much 1000, there is limited count of kpps)
+
+``` ruby
+  Faker::Russian.kpp(sequence_number: 1) # => '381201001'
+  Faker::Russian.inn(sequence_number: 1) # => '381201001'
 ```
 
 ## Contributing

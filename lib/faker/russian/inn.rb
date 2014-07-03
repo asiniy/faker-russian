@@ -3,7 +3,7 @@ module Faker
     module Inn
       def inn(options = {})
         if (options.keys - [:sequence_number, :region_number, :kind]).any?
-          raise 'wrong options. just :kind, :region_number ot :sequence_number'
+          raise 'wrong options. just :kind, :region_number or :sequence_number'
         end
 
         sequence = find_sequence(options[:sequence_number])

@@ -6,5 +6,6 @@ module Faker
     extend Version
 
     extend Inn
+    extend Kpp
   end
 end

@@ -9,7 +9,7 @@
 
 * [ИНН](http://ru.wikipedia.org/wiki/Идентификационный_номер_налогоплательщика) (Faker::Russian.inn)
 * (TODO) [ОКПО](http://ru.wikipedia.org/wiki/Общероссийский_классификатор_предприятий_и_организаций) (Faker::Russian.okpo)
-* (TODO) [КПП](http://ru.wikipedia.org/wiki/Код_причины_постановки_на_учёт) (Faker::Russian.kpp)
+* [КПП](http://ru.wikipedia.org/wiki/Код_причины_постановки_на_учёт) (Faker::Russian.kpp)
 * (TODO) [ОГРН](http://ru.wikipedia.org/wiki/Основной_государственный_регистрационный_номер) (Faker::Russian.ogrn)
 * (TODO) [Корреспондентский счёт] (http://ru.wikipedia.org/wiki/Корреспондентский_счёт) (Faker::Russian.ks)
 * (TODO) [Рассчётный счёт] (http://ru.wikipedia.org/wiki/Расчётный_счёт) (Faker::Russian.rs)
@@ -46,6 +46,27 @@
 ``` ruby
   Faker::Russian.inn(sequence_number: 1) # => '0956860593'
   Faker::Russian.inn(sequence_number: 1) # => '0956860593'
+```
+
+### КПП
+
+Генерирует КПП со случайным номером региона
+
+``` ruby
+  Faker::Russian.kpp # => '525601001'
+```
+
+Можно указать регион
+
+``` ruby
+  Faker::Russian.kpp(region_number: 78) # => '784101001'
+```
+
+Также можно использовать последовательности (не более 1000 - количество КПП ограничено):
+
+``` ruby
+  Faker::Russian.kpp(sequence_number: 1) # => '381201001'
+  Faker::Russian.inn(sequence_number: 1) # => '381201001'
 ```
 
 ## Contributing
