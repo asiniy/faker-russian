@@ -8,7 +8,7 @@
 Generation of specific russian values
 
 * [INN](http://ru.wikipedia.org/wiki/Идентификационный_номер_налогоплательщика) (Faker::Russian.inn) Russian analogue of VAT identification number
-* (TODO) [OKPO](http://ru.wikipedia.org/wiki/Общероссийский_классификатор_предприятий_и_организаций) (Faker::Russian.okpo) Legal code
+* [OKPO](http://ru.wikipedia.org/wiki/Общероссийский_классификатор_предприятий_и_организаций) (Faker::Russian.okpo) Legal code
 * [KPP](http://ru.wikipedia.org/wiki/Код_причины_постановки_на_учёт) (Faker::Russian.kpp) Code of reason for registration
 * (TODO) [OGRN](http://ru.wikipedia.org/wiki/Основной_государственный_регистрационный_номер) (Faker::Russian.ogrn) Main state registration number
 * (TODO) [Correspondent Account Value] (http://ru.wikipedia.org/wiki/Корреспондентский_счёт) (Faker::Russian.ks)
@@ -48,6 +48,19 @@ Also you can use sequences
 ``` ruby
   Faker::Russian.inn(sequence_number: 1) # => '0956860593'
   Faker::Russian.inn(sequence_number: 1) # => '0956860593'
+```
+
+### OKPO
+
+``` ruby
+  Faker::Russian.okpo # => '57972160'
+```
+
+Also pseudo-random sequences available
+
+``` ruby
+  Faker::Russian.okpo(sequence_number: 1) # => '13410254'
+  Faker::Russian.okpo(sequence_number: 1) # => '13410254'
 ```
 
 ### KPP

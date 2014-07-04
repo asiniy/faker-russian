@@ -8,5 +8,6 @@ module Faker
 
     extend Inn
     extend Kpp
+    extend Okpo
   end
 end

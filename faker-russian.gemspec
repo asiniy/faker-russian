@@ -22,5 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10'
   spec.add_development_dependency 'rspec', '~> 3'
   spec.add_development_dependency 'faker', '~> 1.3'
-  spec.add_development_dependency 'validates_russian', '0.0.6'
+  spec.add_development_dependency 'validates_russian', '0.0.7'
 end
