@@ -19,17 +19,6 @@ module Faker
         Random.new(sequence)
       end
 
-      def find_region_number(number = nil, sequence)
-        region_numbers = Faker::Russian::SharedConstants::REGION_NUMBERS
-
-        if number.present?
-          raise('there is no region with that number!') unless region_numbers.include?(number.to_s)
-          number.to_s
-        else
-          region_numbers[sequence.rand(region_numbers.size)]
-        end
-      end
-
       def two_region_numbers(sequence)
         sprintf '%02d', sequence.rand(100)
       end
