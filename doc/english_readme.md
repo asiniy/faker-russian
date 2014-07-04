@@ -1,6 +1,7 @@
 # Faker::Russian
 
 [[по-русски](../README.md)]
+[[developer instructions](../CONTRIBUTING.md)]
 [![Gem Version](https://badge.fury.io/rb/faker-russian.svg)](http://badge.fury.io/rb/faker-russian)
 [![Build Status](https://travis-ci.org/asiniy/faker-russian.svg?branch=master)](https://travis-ci.org/asiniy/faker-russian)
 [![Code Climate](https://codeclimate.com/github/asiniy/faker-russian.png)](https://codeclimate.com/github/asiniy/faker-russian)
@@ -86,8 +87,4 @@ Also, you can use pseudo random sequence numbers (not much 1000, there is limite
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/faker-russian/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+Please read [CONTRIBUTING.md](../CONTRIBUTING.md) in Russian

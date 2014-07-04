@@ -1,6 +1,7 @@
 # Faker::Russian
 
 [[english_doc](doc/english_readme.md)]
+[[Инструкции разработчикам](CONTRIBUTING.md)]
 [![Gem Version](https://badge.fury.io/rb/faker-russian.svg)](http://badge.fury.io/rb/faker-russian)
 [![Build Status](https://travis-ci.org/asiniy/faker-russian.svg?branch=master)](https://travis-ci.org/asiniy/faker-russian)
 [![Code Climate](https://codeclimate.com/github/asiniy/faker-russian.png)](https://codeclimate.com/github/asiniy/faker-russian)
@@ -85,10 +86,6 @@
   Faker::Russian.inn(sequence_number: 1) # => '381201001'
 ```
 
-## Contributing
+## Инструкции разработчикам
 
-1. Fork it ( https://github.com/[my-github-username]/faker-russian/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+Читай [CONTRIBUTING.md](CONTRIBUTING.md)
