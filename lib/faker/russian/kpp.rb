@@ -14,11 +14,6 @@ module Faker
 
     private
 
-      def find_sequence(number)
-        sequence = number || Random.rand(1_000_000_000)
-        Random.new(sequence)
-      end
-
       def two_region_numbers(sequence)
         sprintf '%02d', sequence.rand(100)
       end

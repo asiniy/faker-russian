@@ -2,7 +2,8 @@ Dir[File.dirname(__FILE__) + '/russian/**/*.rb'].each{ |f| require f }
 
 module Faker
   module Russian
-    extend SharedConstants
+    extend Constants
+    extend Sequence
     extend Version
 
     extend Inn

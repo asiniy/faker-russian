@@ -17,11 +17,6 @@ module Faker
 
     private
 
-      def find_sequence(number)
-        sequence = number || Random.rand(1_000_000_000)
-        Random.new(sequence)
-      end
-
       def find_kind(kind, sequence)
         case kind
         when :individual, :legal then kind
