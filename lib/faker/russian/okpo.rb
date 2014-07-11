@@ -2,9 +2,7 @@ module Faker
   module Russian
     module Okpo
       def okpo(options = {})
-        if (options.keys - [:sequence_number]).any?
-          raise 'wrong options. just :sequence_number'
-        end
+        options.assert_valid_keys(:sequence_number)
 
         sequence = find_sequence(options[:sequence_number])
         okpo_digits = okpo_region_numbers(sequence)

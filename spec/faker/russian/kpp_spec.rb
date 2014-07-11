@@ -31,7 +31,7 @@ describe Faker::Russian do
     end
 
     it 'permit just a few options' do
-      expect{ Faker::Russian.kpp(shit: 'shit') }.to raise_error
+      expect{ Faker::Russian.kpp(shit: 'shit') }.to raise_error(ArgumentError)
     end
 
     it 'raise when selecting invalid region' do

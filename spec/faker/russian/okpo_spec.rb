@@ -25,7 +25,7 @@ describe Faker::Russian do
     end
 
     it 'permit just a few options' do
-      expect{ Faker::Russian.okpo(shit: 'shit') }.to raise_error
+      expect{ Faker::Russian.okpo(shit: 'shit') }.to raise_error(ArgumentError)
     end
   end
 end
