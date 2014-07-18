@@ -14,7 +14,7 @@ Generation of specific russian values
 * (TODO) [OGRN](http://ru.wikipedia.org/wiki/Основной_государственный_регистрационный_номер) (Faker::Russian.ogrn) Main state registration number
 * (TODO) [Correspondent Account Value] (http://ru.wikipedia.org/wiki/Корреспондентский_счёт) (Faker::Russian.ks)
 * (TODO) [Bank account value] (http://ru.wikipedia.org/wiki/Расчётный_счёт) (Faker::Russian.rs)
-* (TODO) [OKATO](http://ru.wikipedia.org/wiki/Общероссийский_классификатор_объектов_административно-территориального_деления) (Faker::Russian.okato)
+* [OKATO](http://ru.wikipedia.org/wiki/Общероссийский_классификатор_объектов_административно-территориального_деления) (Faker::Russian.okato)
 * (TODO) [SNILS](http://ru.wikipedia.org/wiki/Страховой_номер_индивидуального_лицевого_счёта) (Faker::Russian.snils)
 * (TODO) [Passport value](http://ru.wikipedia.org/wiki/Паспорт_гражданина_Российской_Федерации) (Faker::Russian.passport)
 
@@ -83,6 +83,35 @@ Also, you can use pseudo random sequence numbers (not much 1000, there is limite
 ``` ruby
   Faker::Russian.kpp(sequence_number: 1) # => '381201001'
   Faker::Russian.inn(sequence_number: 1) # => '381201001'
+```
+
+### ОКАТО
+
+Generates okato with random okato region number and random length
+
+``` ruby
+  Faker::Russian.okato # => '849012471'
+```
+
+You can select okato region number
+
+``` ruby
+  Faker::Russian.okato(okato_region_number: 25) # => '251'
+```
+
+You can select okato region length:
+
+``` ruby
+  Faker::Russian.okato(length: 3) # => '251'
+  Faker::Russian.okato(length: 6) # => '443758'
+  Faker::Russian.okato(length: 9) # => '849012471'
+```
+
+You can use sequences
+
+``` ruby
+  Faker::Russian.okato(sequence_number: 1) # => '517'
+  Faker::Russian.okato(sequence_number: 1) # => '517'
 ```
 
 ## Contributing

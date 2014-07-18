@@ -14,7 +14,7 @@
 * (TODO) [ОГРН](http://ru.wikipedia.org/wiki/Основной_государственный_регистрационный_номер) (Faker::Russian.ogrn)
 * (TODO) [Корреспондентский счёт] (http://ru.wikipedia.org/wiki/Корреспондентский_счёт) (Faker::Russian.ks)
 * (TODO) [Рассчётный счёт] (http://ru.wikipedia.org/wiki/Расчётный_счёт) (Faker::Russian.rs)
-* (TODO) [OKATO](http://ru.wikipedia.org/wiki/Общероссийский_классификатор_объектов_административно-территориального_деления) (Faker::Russian.okato)
+* [OKATO](http://ru.wikipedia.org/wiki/Общероссийский_классификатор_объектов_административно-территориального_деления) (Faker::Russian.okato)
 * (TODO) [СНИЛС](http://ru.wikipedia.org/wiki/Страховой_номер_индивидуального_лицевого_счёта) (Faker::Russian.snils)
 * (TODO) [Значение паспорта](http://ru.wikipedia.org/wiki/Паспорт_гражданина_Российской_Федерации) (Faker::Russian.passport)
 
@@ -83,7 +83,36 @@
 
 ``` ruby
   Faker::Russian.kpp(sequence_number: 1) # => '381201001'
-  Faker::Russian.inn(sequence_number: 1) # => '381201001'
+  Faker::Russian.kpp(sequence_number: 1) # => '381201001'
+```
+
+### ОКАТО
+
+Генерирует ОКАТО со случайным номером региона и случайной длиной
+
+``` ruby
+  Faker::Russian.okato # => '849012471'
+```
+
+Можно указать регион по классификации окато
+
+``` ruby
+  Faker::Russian.okato(okato_region_number: 25) # => '251'
+```
+
+Можно указать длину ОКАТО:
+
+``` ruby
+  Faker::Russian.okato(length: 3) # => '251'
+  Faker::Russian.okato(length: 6) # => '443758'
+  Faker::Russian.okato(length: 9) # => '849012471'
+```
+
+Также можно использовать последовательности:
+
+``` ruby
+  Faker::Russian.okato(sequence_number: 1) # => '517'
+  Faker::Russian.okato(sequence_number: 1) # => '517'
 ```
 
 ## Инструкции разработчикам

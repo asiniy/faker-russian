@@ -29,13 +29,13 @@ module Faker
 
       def check_digit(digits)
         if digits.length == 9
-          calc(P10, digits)
+          calc_inn(P10, digits)
         else
-          calc(P11, digits) + calc(P12, digits + calc(P11, digits))
+          calc_inn(P11, digits) + calc_inn(P12, digits + calc_inn(P11, digits))
         end
       end
 
-      def calc(p, inn)
+      def calc_inn(p, inn)
         (p.each_with_index.inject(0){ |s, p| s + p[0] * inn[p[1]].to_i } % 11 % 10).to_s
       end
 

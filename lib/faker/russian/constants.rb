@@ -13,6 +13,20 @@ module Faker
           region_numbers[sequence.rand(region_numbers.size)]
         end
       end
+
+      OKATO_REGION_NUMBERS = %w{01 03 04 05 07 08 11 12 14 15 17 19 20 22 24 25 26 27 28 29 32 33 34 36 37 38 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99}
+
+      def find_okato_region_number(number = nil, sequence)
+        region_numbers = Faker::Russian::Constants::OKATO_REGION_NUMBERS
+
+        if number.present?
+          raise('there is no okato region with that number!') unless region_numbers.include?(number.to_s)
+          number.to_s
+        else
+          region_numbers[sequence.rand(region_numbers.size)]
+        end
+      end
+
     end
   end
 end
