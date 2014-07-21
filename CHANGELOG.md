@@ -1,3 +1,8 @@
+# 0.0.4
+
+* Bik faker added
+* Okato faker added
+
 # 0.0.3
 
 * Okpo faker added
