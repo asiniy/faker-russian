@@ -6,6 +6,7 @@ module Faker
     extend Sequence
     extend Version
 
+    extend Bik
     extend Inn
     extend Kpp
     extend Okato

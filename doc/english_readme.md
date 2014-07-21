@@ -8,6 +8,7 @@
 
 Generation of specific russian values
 
+* [BIK](http://ru.wikipedia.org/wiki/Банковский_идентификационный_код) (Faker::Russian.bik) Russian bank identification number
 * [INN](http://ru.wikipedia.org/wiki/Идентификационный_номер_налогоплательщика) (Faker::Russian.inn) Russian analogue of VAT identification number
 * [OKPO](http://ru.wikipedia.org/wiki/Общероссийский_классификатор_предприятий_и_организаций) (Faker::Russian.okpo) Legal code
 * [KPP](http://ru.wikipedia.org/wiki/Код_причины_постановки_на_учёт) (Faker::Russian.kpp) Code of reason for registration
@@ -27,6 +28,27 @@ Add to Gemfile
     gem 'validates_russian'
 
 ## Usage
+
+### Bik
+
+Generates bank identification number with random okato region number
+
+``` ruby
+  Faker::Russian.bik # => '0454954616'
+```
+
+You can pass okato region number
+
+``` ruby
+  Faker::Russian.bik(okato_region_number: '40') # => '0440754281'
+```
+
+Also you can use sequences for pseudo-random Bik's
+
+``` ruby
+  Faker::Russian.bik(sequence_number: 1) # => '0451491755'
+  Faker::Russian.bik(sequence_number: 1) # => '0451491755'
+```
 
 ### INN
 

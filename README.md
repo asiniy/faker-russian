@@ -8,6 +8,7 @@
 
 Генерация русских значений: ИНН, ОКПО, КПП и т.д.
 
+* [БИК](http://ru.wikipedia.org/wiki/Банковский_идентификационный_код) (Faker::Russian.bik)
 * [ИНН](http://ru.wikipedia.org/wiki/Идентификационный_номер_налогоплательщика) (Faker::Russian.inn)
 * [ОКПО](http://ru.wikipedia.org/wiki/Общероссийский_классификатор_предприятий_и_организаций) (Faker::Russian.okpo)
 * [КПП](http://ru.wikipedia.org/wiki/Код_причины_постановки_на_учёт) (Faker::Russian.kpp)
@@ -27,6 +28,27 @@
     gem 'faker-russian'
 
 ## Использование
+
+### БИК
+
+По умолчанию генерирует БИК со случайным номером региона по ОКАТО
+
+``` ruby
+  Faker::Russian.bik # => '0454954616'
+```
+
+Можно указывать номер региона по ОКАТО
+
+``` ruby
+  Faker::Russian.bik(okato_region_number: '40') # => '0440754281'
+```
+
+Также существуют последовательности, позволяющие получать псевдослучайные БИКи
+
+``` ruby
+  Faker::Russian.bik(sequence_number: 1) # => '0451491755'
+  Faker::Russian.bik(sequence_number: 1) # => '0451491755'
+```
 
 ### ИНН
 
