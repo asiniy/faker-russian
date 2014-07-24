@@ -5,7 +5,7 @@ module Faker
         options.assert_valid_keys(:sequence_number, :okato_region_number)
 
         sequence = find_sequence(options[:sequence_number])
-        okato_region_number = find_okato_region_number(options[:okato_region_number], sequence)
+        okato_region_number = find_region_number(options[:okato_region_number], sequence, :okato_region_numbers)
 
         '04' + okato_region_number + sprintf("%06d", sequence.rand(1_000_000))
       end

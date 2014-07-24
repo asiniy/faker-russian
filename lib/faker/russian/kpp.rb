@@ -5,7 +5,7 @@ module Faker
         options.assert_valid_keys(:sequence_number, :region_number)
 
         sequence = find_sequence(options[:sequence_number])
-        region_number = find_region_number(options[:region_number], sequence)
+        region_number = find_region_number(options[:region_number], sequence, :region_numbers)
 
         region_number + two_region_numbers(sequence) + '01001'
       end

@@ -5,7 +5,7 @@ module Faker
         options.assert_valid_keys(:sequence_number, :okato_region_number, :length)
 
         sequence = find_sequence(options[:sequence_number])
-        okato_region_number = find_okato_region_number(options[:okato_region_number], sequence)
+        okato_region_number = find_region_number(options[:okato_region_number], sequence, :okato_region_numbers)
         okato_without_calc = okato_region_number + find_length_digits(options[:length], sequence)
         okato_without_calc + calc_okato(okato_without_calc)
       end
