@@ -13,7 +13,12 @@ describe Faker::Russian do
       end
     end
 
-    it 'generate same ks for sequence' do
+    it 'generate difference correspondent account with sequence' do
+      sequenced_cas = 1000.times.map{ |n| Faker::Russian.correspondent_account(sequence_number: n) }
+      expect(sequenced_cas.size).to eq(sequenced_cas.uniq.size)
+    end
+
+    it 'generate same correspondent accounts for sequence' do
       array1 = 1000.times.map{ |n| Faker::Russian.correspondent_account(sequence_number: n) }
       array2 = 1000.times.map{ |n| Faker::Russian.correspondent_account(sequence_number: n) }
       expect(array1).to eq(array2)
