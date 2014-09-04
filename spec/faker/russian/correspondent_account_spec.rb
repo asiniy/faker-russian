@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Faker::Russian do
   describe '#correspondent_account' do
+    let(:bik) { Faker::Russian.bik }
+
     before(:all) do
       DummyModel.reset_callbacks(:validate)
       DummyModel.validates(:field, ks_format: true)
@@ -10,6 +12,18 @@ describe Faker::Russian do
     it 'generate valid correspondent account without arguments' do
       100.times do
         expect(DummyModel.new(field: Faker::Russian.correspondent_account)).to be_valid
+      end
+    end
+
+    it 'generate valid correspondent account with bik' do
+      100.times do
+        expect(DummyModel.new(field: Faker::Russian.correspondent_account(bik: bik))).to be_valid
+      end
+    end
+
+    it 'generate correspondent account for given bik' do
+      100.times do
+        expect(Faker::Russian.correspondent_account(bik: bik)[-3..-1]).to eq bik[-3..-1]
       end
     end
 
