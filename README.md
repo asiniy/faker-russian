@@ -16,7 +16,7 @@
 * [Корреспондентский счёт] (http://ru.wikipedia.org/wiki/Корреспондентский_счёт) (Faker::Russian.correspondent_account)
 * (TODO) [Рассчётный счёт] (http://ru.wikipedia.org/wiki/Расчётный_счёт) (Faker::Russian.rs)
 * [OKATO](http://ru.wikipedia.org/wiki/Общероссийский_классификатор_объектов_административно-территориального_деления) (Faker::Russian.okato)
-* (TODO) [СНИЛС](http://ru.wikipedia.org/wiki/Страховой_номер_индивидуального_лицевого_счёта) (Faker::Russian.snils)
+* [СНИЛС](http://ru.wikipedia.org/wiki/Страховой_номер_индивидуального_лицевого_счёта) (Faker::Russian.snils)
 * (TODO) [Значение паспорта](http://ru.wikipedia.org/wiki/Паспорт_гражданина_Российской_Федерации) (Faker::Russian.passport)
 
 Для проверки сгенерированных значений можешь использовать [gem 'validates_russian'](https://github.com/asiniy/validates_russian)
@@ -163,6 +163,21 @@
 ``` ruby
   Faker::Russian.okato(sequence_number: 1) # => '517'
   Faker::Russian.okato(sequence_number: 1) # => '517'
+```
+
+### СНИЛС
+
+Генерирует 11-ти значный СНИЛС
+
+``` ruby
+  Faker::Russian.snils # => '15200583517'
+```
+
+Также можно использовать последовательности:
+
+``` ruby
+  Faker::Russian.snils(sequence_number: 1) # => '71735402183'
+  Faker::Russian.snils(sequence_number: 1) # => '71735402183'
 ```
 
 ## Инструкции разработчикам

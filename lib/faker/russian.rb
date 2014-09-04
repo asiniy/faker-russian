@@ -12,5 +12,6 @@ module Faker
     extend Okato
     extend Okpo
     extend CorrespondentAccount
+    extend Snils
   end
 end
