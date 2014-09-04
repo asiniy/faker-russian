@@ -13,7 +13,7 @@
 * [ОКПО](http://ru.wikipedia.org/wiki/Общероссийский_классификатор_предприятий_и_организаций) (Faker::Russian.okpo)
 * [КПП](http://ru.wikipedia.org/wiki/Код_причины_постановки_на_учёт) (Faker::Russian.kpp)
 * (TODO) [ОГРН](http://ru.wikipedia.org/wiki/Основной_государственный_регистрационный_номер) (Faker::Russian.ogrn)
-* (TODO) [Корреспондентский счёт] (http://ru.wikipedia.org/wiki/Корреспондентский_счёт) (Faker::Russian.ks)
+* [Корреспондентский счёт] (http://ru.wikipedia.org/wiki/Корреспондентский_счёт) (Faker::Russian.correspondent_account)
 * (TODO) [Рассчётный счёт] (http://ru.wikipedia.org/wiki/Расчётный_счёт) (Faker::Russian.rs)
 * [OKATO](http://ru.wikipedia.org/wiki/Общероссийский_классификатор_объектов_административно-территориального_деления) (Faker::Russian.okato)
 * (TODO) [СНИЛС](http://ru.wikipedia.org/wiki/Страховой_номер_индивидуального_лицевого_счёта) (Faker::Russian.snils)
@@ -106,6 +106,28 @@
 ``` ruby
   Faker::Russian.kpp(sequence_number: 1) # => '381201001'
   Faker::Russian.kpp(sequence_number: 1) # => '381201001'
+```
+
+### Корреспондентский счёт
+
+Генерируется корреспондентский счет
+
+```ruby
+  Faker::Russian.correspondent_account
+```
+
+Так же доступны alias'ы
+
+```ruby
+  Faker::Russian.ks
+  Faker::Russian.ca
+```
+
+Также можно использовать последовательности (не более 1 000 000 000):
+
+``` ruby
+  Faker::Russian.correspondent_account(sequence_number: 1) # => '30100000000717354021'
+  Faker::Russian.correspondent_account(sequence_number: 1) # => '30100000000717354021'
 ```
 
 ### ОКАТО
