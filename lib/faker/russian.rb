@@ -13,5 +13,6 @@ module Faker
     extend Okpo
     extend Snils
     extend CorrespondentAccount
+    extend Rs
   end
 end
