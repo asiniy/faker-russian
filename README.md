@@ -14,7 +14,7 @@
 * [КПП](http://ru.wikipedia.org/wiki/Код_причины_постановки_на_учёт) (Faker::Russian.kpp)
 * (TODO) [ОГРН](http://ru.wikipedia.org/wiki/Основной_государственный_регистрационный_номер) (Faker::Russian.ogrn)
 * (TODO) [Корреспондентский счёт] (http://ru.wikipedia.org/wiki/Корреспондентский_счёт) (Faker::Russian.ks)
-* (TODO) [Рассчётный счёт] (http://ru.wikipedia.org/wiki/Расчётный_счёт) (Faker::Russian.rs)
+* [Расчётный счёт] (http://ru.wikipedia.org/wiki/Расчётный_счёт) (Faker::Russian.rs)
 * [OKATO](http://ru.wikipedia.org/wiki/Общероссийский_классификатор_объектов_административно-территориального_деления) (Faker::Russian.okato)
 * (TODO) [СНИЛС](http://ru.wikipedia.org/wiki/Страховой_номер_индивидуального_лицевого_счёта) (Faker::Russian.snils)
 * (TODO) [Значение паспорта](http://ru.wikipedia.org/wiki/Паспорт_гражданина_Российской_Федерации) (Faker::Russian.passport)
@@ -106,6 +106,27 @@
 ``` ruby
   Faker::Russian.kpp(sequence_number: 1) # => '381201001'
   Faker::Russian.kpp(sequence_number: 1) # => '381201001'
+```
+
+### Расчетный счет
+
+Генерирует Расчетный счет со случайным номером ОКВ
+
+``` ruby
+  Faker::Russian.rs # => '88638068000072709375'
+```
+
+Можно указать ОКВ
+
+``` ruby
+  Faker::Russian.rs(okv: 810) # => '86815810000597174799'
+```
+
+Также можно использовать последовательности (не более 1 000 000 000):
+
+``` ruby
+  Faker::Russian.rs(sequence_number: 1) # => '98539706000946286476'
+  Faker::Russian.rs(sequence_number: 1) # => '98539706000946286476'
 ```
 
 ### ОКАТО

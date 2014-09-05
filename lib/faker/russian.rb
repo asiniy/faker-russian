@@ -11,5 +11,6 @@ module Faker
     extend Kpp
     extend Okato
     extend Okpo
+    extend Rs
   end
 end
