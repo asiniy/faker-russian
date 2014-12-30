@@ -13,10 +13,10 @@
 * [ОКПО](http://ru.wikipedia.org/wiki/Общероссийский_классификатор_предприятий_и_организаций) (Faker::Russian.okpo)
 * [КПП](http://ru.wikipedia.org/wiki/Код_причины_постановки_на_учёт) (Faker::Russian.kpp)
 * (TODO) [ОГРН](http://ru.wikipedia.org/wiki/Основной_государственный_регистрационный_номер) (Faker::Russian.ogrn)
-* (TODO) [Корреспондентский счёт] (http://ru.wikipedia.org/wiki/Корреспондентский_счёт) (Faker::Russian.ks)
+* [Корреспондентский счёт] (http://ru.wikipedia.org/wiki/Корреспондентский_счёт) (Faker::Russian.correspondent_account)
 * [Расчётный счёт] (http://ru.wikipedia.org/wiki/Расчётный_счёт) (Faker::Russian.rs)
 * [OKATO](http://ru.wikipedia.org/wiki/Общероссийский_классификатор_объектов_административно-территориального_деления) (Faker::Russian.okato)
-* (TODO) [СНИЛС](http://ru.wikipedia.org/wiki/Страховой_номер_индивидуального_лицевого_счёта) (Faker::Russian.snils)
+* [СНИЛС](http://ru.wikipedia.org/wiki/Страховой_номер_индивидуального_лицевого_счёта) (Faker::Russian.snils)
 * (TODO) [Значение паспорта](http://ru.wikipedia.org/wiki/Паспорт_гражданина_Российской_Федерации) (Faker::Russian.passport)
 
 Для проверки сгенерированных значений можешь использовать [gem 'validates_russian'](https://github.com/asiniy/validates_russian)
@@ -108,6 +108,27 @@
   Faker::Russian.kpp(sequence_number: 1) # => '381201001'
 ```
 
+### Корреспондентский счёт
+
+Генерируется корреспондентский счет
+
+```ruby
+  Faker::Russian.correspondent_account
+```
+
+Также можно использовать последовательности (не более 1 000 000 000):
+
+``` ruby
+  Faker::Russian.correspondent_account(sequence_number: 1) # => '30100000000717354021'
+  Faker::Russian.correspondent_account(sequence_number: 1) # => '30100000000717354021'
+```
+
+Можно указать БИК для которого генерируется счет:
+
+```ruby
+  Faker::Russian.correspondent_account(bik: '0440754281') # => '30100000341569331281'
+```
+
 ### Расчетный счет
 
 Генерирует Расчетный счет со случайным номером ОКВ
@@ -156,6 +177,21 @@
 ``` ruby
   Faker::Russian.okato(sequence_number: 1) # => '517'
   Faker::Russian.okato(sequence_number: 1) # => '517'
+```
+
+### СНИЛС
+
+Генерирует 11-ти значный СНИЛС
+
+``` ruby
+  Faker::Russian.snils # => '15200583517'
+```
+
+Также можно использовать последовательности:
+
+``` ruby
+  Faker::Russian.snils(sequence_number: 1) # => '71735402183'
+  Faker::Russian.snils(sequence_number: 1) # => '71735402183'
 ```
 
 ## Инструкции разработчикам
