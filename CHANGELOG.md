@@ -1,3 +1,8 @@
+# 0.0.5
+
+* Rs faker added
+* Ks faker added
+
 # 0.0.4
 
 * Bik faker added
