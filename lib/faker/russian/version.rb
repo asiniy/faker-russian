@@ -1,7 +1,7 @@
 module Faker
   module Russian
     module Version
-      VERSION = '0.0.5'
+      VERSION = '0.0.6'
 
       def version
         VERSION

@@ -1,3 +1,7 @@
+# 0.0.6
+
+* Generating according to Crimea regions
+
 # 0.0.5
 
 * Rs faker added
