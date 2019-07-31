@@ -1,3 +1,6 @@
+require 'active_support/core_ext/hash/keys.rb'
+require 'active_support/core_ext/object/blank.rb'
+
 Dir[File.dirname(__FILE__) + '/russian/**/*.rb'].each{ |f| require f }
 
 module Faker
