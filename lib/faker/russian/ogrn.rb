@@ -20,6 +20,7 @@ module Faker
       end
 
     private
+
       LEGAL_SIGN_OF_REG_NUMS = [1, 5].freeze
       INDIVIDUAL_SIGN_OF_REG_NUM = 4
       private_constant :LEGAL_SIGN_OF_REG_NUMS, :INDIVIDUAL_SIGN_OF_REG_NUM
@@ -28,7 +29,7 @@ module Faker
         return OGRN_SUPPORT_KINDS[sequence.rand(2)] if kind.nil?
         return kind if OGRN_SUPPORT_KINDS.include?(kind)
 
-        raise "there is no any kind other than #{OGRN_SUPPORT_KINDS.map{ |k| ":#{k}" }.join(', ')}"
+        raise ArgumentError, "there is no any kind other than #{OGRN_SUPPORT_KINDS.map{ |k| ":#{k}" }.join(', ')}"
       end
 
       def find_sign_of_reg_num(kind, sequence)

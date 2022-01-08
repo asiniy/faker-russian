@@ -64,7 +64,7 @@ describe Faker::Russian do
         "there is no any kind other than #{described_class::Ogrn::OGRN_SUPPORT_KINDS.map{ |k| ":#{k}" }.join(', ')}"
       end
 
-      it { expect { described_class.ogrn(kind: :not_support_kind) }.to raise_error(RuntimeError, err_msg) }
+      it { expect { described_class.ogrn(kind: :not_support_kind) }.to raise_error(ArgumentError, err_msg) }
     end
   end
 end
