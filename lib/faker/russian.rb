@@ -9,6 +9,7 @@ module Faker
     extend Bik
     extend Inn
     extend Kpp
+    extend Ogrn
     extend Okato
     extend Okpo
     extend Snils
