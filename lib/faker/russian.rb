@@ -15,5 +15,6 @@ module Faker
     extend Snils
     extend CorrespondentAccount
     extend Rs
+    extend CadastralNumber
   end
 end
