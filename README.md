@@ -13,11 +13,12 @@
 * [ОКПО](http://ru.wikipedia.org/wiki/Общероссийский_классификатор_предприятий_и_организаций) (Faker::Russian.okpo)
 * [КПП](http://ru.wikipedia.org/wiki/Код_причины_постановки_на_учёт) (Faker::Russian.kpp)
 * [ОГРН](http://ru.wikipedia.org/wiki/Основной_государственный_регистрационный_номер) (Faker::Russian.ogrn)
-* [Корреспондентский счёт] (http://ru.wikipedia.org/wiki/Корреспондентский_счёт) (Faker::Russian.correspondent_account)
-* [Расчётный счёт] (http://ru.wikipedia.org/wiki/Расчётный_счёт) (Faker::Russian.rs)
+* [Корреспондентский счёт](http://ru.wikipedia.org/wiki/Корреспондентский_счёт) (Faker::Russian.correspondent_account)
+* [Расчётный счёт](http://ru.wikipedia.org/wiki/Расчётный_счёт) (Faker::Russian.rs)
 * [OKATO](http://ru.wikipedia.org/wiki/Общероссийский_классификатор_объектов_административно-территориального_деления) (Faker::Russian.okato)
 * [СНИЛС](http://ru.wikipedia.org/wiki/Страховой_номер_индивидуального_лицевого_счёта) (Faker::Russian.snils)
 * (TODO) [Значение паспорта](http://ru.wikipedia.org/wiki/Паспорт_гражданина_Российской_Федерации) (Faker::Russian.passport)
+* [Кадастровый номер](https://ru.wikipedia.org/wiki/Кадастровый_номер) (Faker::Russian.cadastral_number)
 
 Для проверки сгенерированных значений можешь использовать [gem 'validates_russian'](https://github.com/asiniy/validates_russian)
 
@@ -192,6 +193,59 @@
 ``` ruby
   Faker::Russian.snils(sequence_number: 1) # => '71735402183'
   Faker::Russian.snils(sequence_number: 1) # => '71735402183'
+```
+
+## Кадастровый номер
+
+Генерируем случайный кадастровый номер
+
+```ruby
+  Faker::Russian.cadastral_number # => 41:16:8960136:44567
+```
+
+Можно указать кадастровый округ. Список кадастровых округов можно посмотреть [тут](http://www.consultant.ru/document/cons_doc_LAW_198788/77071e4c1462d21246476fac26647d08a6d4c298/).
+
+Округ с номером "0" - "Общероссийский" кадастровый округ.
+
+```ruby
+  Faker::Russian.cadastral_number(district: 61) # => 61:16:8960136:44567
+  Faker::Russian.cadastral_number(district: 1)  # => 01:16:8960136:44567
+```
+
+Можно указать кадастровый район.
+
+Район с номером '0' - "Условный" кадастровый район.
+
+```ruby
+  Faker::Russian.cadastral_number(area: 2)  # => 41:02:8960136:44567
+  Faker::Russian.cadastral_number(area: 61) # => 41:61:8960136:44567
+```
+
+Можно указать кадастровый квартал.
+
+```ruby
+  Faker::Russian.cadastral_number(quarter: 120300)    # => 41:16:120300:44567
+  Faker::Russian.cadastral_number(quarter: 1203001)   # => 41:16:1203001:44567
+  Faker::Russian.cadastral_number(quarter: '0205006') # => 41:16:0205006:44567
+```
+
+В приказе ["Об утверждении порядка кадастрового деления территории Российской Федерации, порядка присвоения объектам недвижимости кадастровых номеров, номеров регистрации, реестровых номеров границ"](https://rg.ru/2016/01/27/kadastr-dok.html) сказано:
+
+> В кадастровом округе "Общероссийский" создается один кадастровый район с учетным номером "0:0" и наименованием "Условный", в котором, соответственно, один кадастровый квартал с учетным номером "0:0:0", границы указанных кадастрового района и кадастрового квартала совпадают с границами кадастрового округа "Общероссийский".
+
+Создать такой адрес можно вот так:
+
+```ruby
+  Faker::Russian.cadastral_number(district: 0, area: 0, quarter: 0) # 0:0:0:1768
+```
+
+Также можно использовать последовательности:
+
+``` ruby
+  Faker::Russian.cadastral_number(sequence_number: 1)              # => 38:13:591263:50058
+  Faker::Russian.cadastral_number(sequence_number: 1)              # => 38:13:591263:50058
+  Faker::Russian.cadastral_number(sequence_number: 1, district: 1) # => 01:38:7762380:5193
+  Faker::Russian.cadastral_number(sequence_number: 1, district: 1) # => 01:38:7762380:5193
 ```
 
 ## Инструкции разработчикам
