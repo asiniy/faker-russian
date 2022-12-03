@@ -102,12 +102,7 @@ describe Faker::Russian do
       let(:array1) { 1000.times.map{ |n| described_class.cadastral_number(sequence_number: n) } }
       let(:array2) { 1000.times.map{ |n| described_class.cadastral_number(sequence_number: n) } }
 
-      it {
-        puts Faker::Russian.cadastral_number(sequence_number: 1)
-        puts Faker::Russian.cadastral_number(sequence_number: 1)
-        puts Faker::Russian.cadastral_number(sequence_number: 1, district: 1)
-        puts Faker::Russian.cadastral_number(sequence_number: 1, district: 1)
-        expect(array1).to eq(array2) }
+      it { expect(array1).to eq(array2) }
     end
   end
 end
